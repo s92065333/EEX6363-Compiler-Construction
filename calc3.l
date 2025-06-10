@@ -32,9 +32,10 @@ void yyerror(char *);
 "!="            return NE;
 "while"         return WHILE;
 "if"            return IF;
+"then"          return THEN;
 "else"          return ELSE;
 "print"         return PRINT;
-"then"          return THEN;
+
 
 [ \t\n]+        ;       /* ignore whitespace */
 
