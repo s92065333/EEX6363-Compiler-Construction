@@ -1,4 +1,5 @@
-# build environment for cygwin
+# build environment for cygwin for task 2
+
 
 # bison -d calc1.y    produces calc1.tab.c
 # bison -y -d calc1.y produces y.tab.c (the standard yacc output)
