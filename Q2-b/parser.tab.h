@@ -39,36 +39,58 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     INTEGER = 258,
-     VARIABLE = 259,
-     WHILE = 260,
-     IF = 261,
-     THEN = 262,
-     PRINT = 263,
-     IFX = 264,
-     ELSE = 265,
-     NE = 266,
-     EQ = 267,
-     LE = 268,
-     GE = 269,
-     UMINUS = 270
+     YYEOF = 258,
+     ERROR_TOKEN = 259,
+     INTEGER_CONSTANT = 260,
+     FLOATING_POINT_CONSTANT = 261,
+     IDENTIFIER = 262,
+     ELSE_TOKEN = 263,
+     INTEGER_TOKEN = 264,
+     SELF_TOKEN = 265,
+     FLOAT_TOKEN = 266,
+     ISA_TOKEN = 267,
+     CONSTRUCT_TOKEN = 268,
+     FUNC_TOKEN = 269,
+     PRIVATE_TOKEN = 270,
+     THEN_TOKEN = 271,
+     IF_TOKEN = 272,
+     PUBLIC_TOKEN = 273,
+     LOCAL_TOKEN = 274,
+     IMPLEMENT_TOKEN = 275,
+     READ_TOKEN = 276,
+     VOID_TOKEN = 277,
+     AND_TOKEN = 278,
+     CLASS_TOKEN = 279,
+     OR_TOKEN = 280,
+     RETURN_TOKEN = 281,
+     WHILE_TOKEN = 282,
+     ATTRIBUTE_TOKEN = 283,
+     WRITE_TOKEN = 284,
+     NOT_TOKEN = 285,
+     ASSIGN_OP = 286,
+     EQ_OP = 287,
+     NE_OP = 288,
+     LE_OP = 289,
+     GE_OP = 290,
+     ARROW = 291,
+     PLUS_OP = 292,
+     MINUS_OP = 293,
+     MUL_OP = 294,
+     DIV_OP = 295,
+     LPAREN = 296,
+     RPAREN = 297,
+     LBRACE = 298,
+     RBRACE = 299,
+     LBRACKET = 300,
+     RBRACKET = 301,
+     SEMICOLON = 302,
+     COMMA = 303,
+     DOT = 304,
+     COLON = 305,
+     LT_OP = 306,
+     GT_OP = 307
    };
 #endif
-/* Tokens.  */
-#define INTEGER 258
-#define VARIABLE 259
-#define WHILE 260
-#define IF 261
-#define THEN 262
-#define PRINT 263
-#define IFX 264
-#define ELSE 265
-#define NE 266
-#define EQ 267
-#define LE 268
-#define GE 269
-#define UMINUS 270
-
 
 
 
@@ -77,16 +99,17 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 19 "calc3.y"
+#line 13 "parser.y"
 
-    int iValue;                 /* integer value */
-    char sIndex;                /* symbol table index */
-    nodeType *nPtr;             /* node pointer */
+    int iValue;
+    double fValue;
+    char *sValue;
+    SymbolEntry *sEntry;
 
 
 
 /* Line 1676 of yacc.c  */
-#line 90 "y.tab.h"
+#line 113 "parser.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -95,4 +118,18 @@ typedef union YYSTYPE
 
 extern YYSTYPE yylval;
 
+#if ! defined YYLTYPE && ! defined YYLTYPE_IS_DECLARED
+typedef struct YYLTYPE
+{
+  int first_line;
+  int first_column;
+  int last_line;
+  int last_column;
+} YYLTYPE;
+# define yyltype YYLTYPE /* obsolescent; will be withdrawn */
+# define YYLTYPE_IS_DECLARED 1
+# define YYLTYPE_IS_TRIVIAL 1
+#endif
+
+extern YYLTYPE yylloc;
 
