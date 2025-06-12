@@ -1,13 +1,13 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-// --- Symbol Table Entry Structure ---
-// Represents an entry in the symbol table, primarily for identifiers.
+// === Structure for Symbol Table Record ===
+// Stores information related to identifiers in the symbol table.
 typedef struct {
-    char *lexeme;     // The actual string of the identifier
-    int type;         // The type of token (will correspond to Bison's token ID, e.g., IDENTIFIER)
-    // Add more fields here for semantic analysis later (e.g., data type, scope, value)
-    // int value;        // Example: for a simple variable in this context
+    char *lexeme;     // String value representing the identifier's text
+    int type;         // Token type (linked to Bison's token codes, e.g., IDENTIFIER)
+    // Additional fields can be introduced later for semantic processing (e.g., datatype, scope, assigned value)
+    // int value;        // For example: to store variable values if needed
 } SymbolEntry;
 
 #endif // COMMON_H

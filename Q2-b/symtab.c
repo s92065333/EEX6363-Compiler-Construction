@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "symtab.h" // Include symbol table definitions
+#include "symtab.h" 
 
 SymbolEntry symbolTable[MAX_SYMBOLS];
 int nextSymbolIndex = 0;
@@ -11,7 +11,7 @@ SymbolEntry* install(const char *lexeme, int type) {
     // First, check if the symbol already exists
     SymbolEntry *entry = lookup(lexeme);
     if (entry != NULL) {
-        return entry; // Already exists, return existing entry
+        return entry; 
     }
 
     // If not, add new symbol
@@ -21,9 +21,8 @@ SymbolEntry* install(const char *lexeme, int type) {
     }
 
     SymbolEntry *newEntry = &symbolTable[nextSymbolIndex];
-    newEntry->lexeme = strdup(lexeme); // Duplicate the string
+    newEntry->lexeme = strdup(lexeme); 
     newEntry->type = type;
-    // Initialize other fields if necessary
     nextSymbolIndex++;
     return newEntry;
 }
@@ -32,10 +31,10 @@ SymbolEntry* install(const char *lexeme, int type) {
 SymbolEntry* lookup(const char *lexeme) {
     for (int i = 0; i < nextSymbolIndex; i++) {
         if (strcmp(symbolTable[i].lexeme, lexeme) == 0) {
-            return &symbolTable[i]; // Found
+            return &symbolTable[i]; 
         }
     }
-    return NULL; // Not found
+    return NULL; 
 }
 
 // Function to print the contents of the symbol table

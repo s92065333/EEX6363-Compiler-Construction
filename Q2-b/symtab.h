@@ -1,7 +1,7 @@
 #ifndef SYMTAB_H
 #define SYMTAB_H
 
-#include "common.h" // Include common definitions
+#include "common.h" 
 
 // --- Global Symbol Table ---
 #define MAX_SYMBOLS 1000
@@ -14,4 +14,4 @@ SymbolEntry* install(const char *lexeme, int type);
 SymbolEntry* lookup(const char *lexeme);
 void print_symbol_table(void);
 
-#endif // SYMTAB_H
+#endif 
