@@ -1,0 +1,6 @@
+x := 0123;         
+// Leading zero error
+ y := 12.;          
+z := .45;          
+// Invalid float format
+ // Invalid float format

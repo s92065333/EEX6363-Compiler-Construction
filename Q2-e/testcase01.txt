@@ -1,0 +1,4 @@
+ class MyClass isa BaseClass {
+ public func myFunction() => void;
+ private attribute x : integer;
+ }

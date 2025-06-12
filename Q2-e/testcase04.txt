@@ -1,0 +1,2 @@
+ array[index] := {value1, value2};
+ func(param1, param2) => returnType;

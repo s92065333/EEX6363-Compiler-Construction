@@ -1,0 +1,3 @@
+x := 5;
+ /* This comment is never closed
+ y := 10;

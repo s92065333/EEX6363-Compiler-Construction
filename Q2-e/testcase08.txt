@@ -1,0 +1,4 @@
+ 2invalid := 5;     
+my-var := 10;      
+// Identifier cannot start with digit
+ // Hyphen not allowed in identifier
